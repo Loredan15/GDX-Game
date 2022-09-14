@@ -1,0 +1,90 @@
+
+123.png
+size: 1430,68
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Full Coinss
+  rotate: false
+  xy: 2, 2
+  size: 508, 64
+  orig: 508, 64
+  offset: 0, 0
+  index: -1
+grogg
+  rotate: false
+  xy: 512, 10
+  size: 256, 56
+  orig: 256, 56
+  offset: 0, 0
+  index: -1
+run
+  rotate: false
+  xy: 770, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 4
+run
+  rotate: false
+  xy: 836, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 5
+run
+  rotate: false
+  xy: 902, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 6
+run
+  rotate: false
+  xy: 968, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 7
+run
+  rotate: false
+  xy: 1034, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 8
+run
+  rotate: false
+  xy: 1232, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+run
+  rotate: false
+  xy: 1298, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+run
+  rotate: false
+  xy: 1364, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+stand
+  rotate: false
+  xy: 1100, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+stand
+  rotate: false
+  xy: 1166, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
