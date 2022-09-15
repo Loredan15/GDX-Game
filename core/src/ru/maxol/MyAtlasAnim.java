@@ -23,7 +23,7 @@ public class MyAtlasAnim {
     }
 
     public TextureRegion draw() {
-//        time += Gdx.graphics.getDeltaTime();
+        time += Gdx.graphics.getDeltaTime();
         return anm.getKeyFrame(time);
     }
 

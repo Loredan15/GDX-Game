@@ -1,6 +1,5 @@
 package ru.maxol;
 
-
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 
@@ -10,12 +9,6 @@ public class MyInputProcessor implements InputProcessor {
 
     public MyInputProcessor(Player player) {
         this.player = player;
-    }
-
-    private String outString = "";
-
-    public String getOutString() {
-        return outString;
     }
 
     @Override
@@ -28,11 +21,15 @@ public class MyInputProcessor implements InputProcessor {
             case Input.Keys.A:
                 player.setRightMove(true);
                 break;
+            case Input.Keys.W:
+                player.setUpMoveMove(true);
+                break;
+            case Input.Keys.SPACE:
+                player.setJump(true);
+                break;
+            default:
+                player.setStay(true);
         }
-//        if (!outString.contains(Input.Keys.toString(keycode))) {
-//            outString += Input.Keys.toString(keycode);
-//
-//        }
         return true;
     }
 
@@ -46,11 +43,15 @@ public class MyInputProcessor implements InputProcessor {
             case Input.Keys.A:
                 player.setRightMove(false);
                 break;
+            case Input.Keys.W:
+                player.setUpMoveMove(false);
+                break;
+            case Input.Keys.SPACE:
+                player.setJump(false);
+                break;
+            default:
+                player.setStay(true);
         }
-
-//        if (outString.contains(Input.Keys.toString(keycode))) {
-//            outString = outString.replace(Input.Keys.toString(keycode), "");
-//        }
         return true;
     }
 

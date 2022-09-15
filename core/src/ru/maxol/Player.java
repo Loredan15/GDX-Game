@@ -5,8 +5,13 @@ import com.badlogic.gdx.Gdx;
 public class Player {
     boolean leftMove;
     boolean rightMove;
-    float x;
-    float y;
+    boolean upMove;
+    boolean jump;
+    boolean stay;
+    float x = 5;
+    float y = 95;
+
+
 
     void updateMotion() {
         if (leftMove) {
@@ -14,6 +19,15 @@ public class Player {
         }
         if (rightMove) {
             x -= 50 * Gdx.graphics.getDeltaTime();
+        }
+        if (jump){
+            for (int i = 0; i < 200; i++) {
+                if (i < 100) y += 2 * Gdx.graphics.getDeltaTime();
+
+//                if (i > 101) y -= 50 * Gdx.graphics.getDeltaTime();
+                Gdx.app.log("Move", String.valueOf(y));
+            }
+
         }
     }
 
@@ -27,6 +41,23 @@ public class Player {
         rightMove = t;
     }
 
+    public void setJump(boolean jump) {
+        this.jump = jump;
+    }
+
+    public boolean isJump() {
+        return jump;
+    }
+
+    public void setUpMoveMove(boolean t) {
+        if (stay && t) stay = false;
+        upMove = t;
+    }
+
+    public boolean isUpMove() {
+        return upMove;
+    }
+
     public float getX() {
         return x;
     }
@@ -37,6 +68,10 @@ public class Player {
 
     public boolean isLeftMove() {
         return leftMove;
+    }
+
+    public void setStay(boolean stay) {
+        this.stay = stay;
     }
 
     public boolean isRightMove() {
