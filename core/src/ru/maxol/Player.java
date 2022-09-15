@@ -21,10 +21,11 @@ public class Player {
             x -= 50 * Gdx.graphics.getDeltaTime();
         }
         if (jump){
+            //TODO Вот тут вопрос. Как корректно плавно изменять координату У, что бы реализовать прыжок ?
             for (int i = 0; i < 200; i++) {
-                if (i < 100) y += 2 * Gdx.graphics.getDeltaTime();
-
-//                if (i > 101) y -= 50 * Gdx.graphics.getDeltaTime();
+                if (i < 100) y += 50 * Gdx.graphics.getDeltaTime();
+                if (i > 101) y -= 50 * Gdx.graphics.getDeltaTime();
+                // В лог выводится корректно все, но по факту персонаж остается в высшей точке
                 Gdx.app.log("Move", String.valueOf(y));
             }
 
