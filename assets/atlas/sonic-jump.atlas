@@ -1,0 +1,27 @@
+sonic-jump.png
+	size: 92, 77
+	repeat: none
+sonic-jump
+	bounds: 0, 32, 24, 45
+	offsets: 1, 1, 31, 50
+	index: 1
+sonic-jump
+	bounds: 0, 0, 29, 30
+	offsets: 2, 0, 33, 35
+	index: 2
+sonic-jump
+	bounds: 58, 48, 30, 29
+	offsets: 4, 3, 36, 40
+	index: 3
+sonic-jump
+	bounds: 31, 15, 29, 30
+	offsets: 4, 2, 36, 40
+	index: 4
+sonic-jump
+	bounds: 62, 17, 30, 29
+	offsets: 4, 3, 37, 42
+	index: 5
+sonic-jump
+	bounds: 26, 47, 30, 30
+	offsets: 4, 3, 38, 42
+	index: 6
