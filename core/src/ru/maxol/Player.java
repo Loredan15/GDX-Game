@@ -1,6 +1,8 @@
 package ru.maxol;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
 
 public class Player {
     boolean leftMove;
@@ -12,23 +14,22 @@ public class Player {
     float y = 95;
 
 
-
-    void updateMotion() {
+    void updateMotion(Body body) {
         if (leftMove) {
-            x += 50 * Gdx.graphics.getDeltaTime();
+            body.applyForceToCenter(new Vector2(1000000f, 0f), true);
         }
         if (rightMove) {
-            x -= 50 * Gdx.graphics.getDeltaTime();
+            body.applyForceToCenter(new Vector2(-1000000f, 0f), true);
         }
-        if (jump){
-            //TODO Вот тут вопрос. Как корректно плавно изменять координату У, что бы реализовать прыжок ?
+        if (jump) {
+            float y1 = getY();
             for (int i = 0; i < 200; i++) {
-                if (i < 100) y += 50 * Gdx.graphics.getDeltaTime();
-                if (i > 101) y -= 50 * Gdx.graphics.getDeltaTime();
-                // В лог выводится корректно все, но по факту персонаж остается в высшей точке
-                Gdx.app.log("Move", String.valueOf(y));
+                if (i < 100) y += 2 * Gdx.graphics.getDeltaTime();
+                if (y - y1 >= 200)
+                y -= 45 * Gdx.graphics.getDeltaTime();
+                body.applyForceToCenter(new Vector2(0, 10000f), true);
+                continue;
             }
-
         }
     }
 
