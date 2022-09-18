@@ -89,8 +89,14 @@ public class MyGame extends ApplicationAdapter {
             float y = rect.get(i).getRectangle().y + rect.get(i).getRectangle().height / 2;
             float w = rect.get(i).getRectangle().width / 2;
             float h = rect.get(i).getRectangle().height / 2;
+            //TODO А как скрыть фигуры ? Попробовал все эти варианты - все-равно видны :(
+//            rect.get(i).setOpacity(0f);
+//            rect.get(i).setVisible(false);
+//            env.setVisible(false);
+//            env.setOpacity(0);
             def.position.set(x, y);
             shape.setAsBox(w, h);
+
             physX.world.createBody(def).createFixture(fdef).setUserData("Block");
         }
 

@@ -1,0 +1,27 @@
+
+knight.png
+size: 2048, 256
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+_Idle
+  rotate: false
+  xy: 2, 84
+  size: 1200, 80
+  orig: 1200, 80
+  offset: 0, 0
+  index: -1
+_Jump
+  rotate: false
+  xy: 1204, 84
+  size: 360, 80
+  orig: 360, 80
+  offset: 0, 0
+  index: -1
+_Run
+  rotate: false
+  xy: 2, 2
+  size: 1200, 80
+  orig: 1200, 80
+  offset: 0, 0
+  index: -1
