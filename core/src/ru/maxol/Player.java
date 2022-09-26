@@ -1,6 +1,6 @@
 package ru.maxol;
 
-import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.physics.box2d.Body;
 
 public class Player {
     boolean leftMove;
@@ -12,23 +12,15 @@ public class Player {
     float y = 95;
 
 
-
-    void updateMotion() {
+    void updateMotion(Body body) {
         if (leftMove) {
-            x += 50 * Gdx.graphics.getDeltaTime();
+            body.setLinearVelocity(100f, body.getLinearVelocity().y);
         }
         if (rightMove) {
-            x -= 50 * Gdx.graphics.getDeltaTime();
+            body.setLinearVelocity(-100f, body.getLinearVelocity().y);
         }
-        if (jump){
-            //TODO Вот тут вопрос. Как корректно плавно изменять координату У, что бы реализовать прыжок ?
-            for (int i = 0; i < 200; i++) {
-                if (i < 100) y += 50 * Gdx.graphics.getDeltaTime();
-                if (i > 101) y -= 50 * Gdx.graphics.getDeltaTime();
-                // В лог выводится корректно все, но по факту персонаж остается в высшей точке
-                Gdx.app.log("Move", String.valueOf(y));
-            }
-
+        if (jump) {
+            body.setLinearVelocity(body.getLinearVelocity().x, 100f);
         }
     }
 
