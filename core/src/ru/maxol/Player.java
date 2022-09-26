@@ -12,7 +12,7 @@ public class Player {
     float y = 95;
 
 
-    void updateMotion(Body body) {
+    public void updateMotion(Body body) {
         if (leftMove) {
             body.setLinearVelocity(100f, body.getLinearVelocity().y);
         }

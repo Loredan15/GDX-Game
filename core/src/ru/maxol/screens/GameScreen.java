@@ -1,9 +1,9 @@
-package ru.maxol;
+package ru.maxol.screens;
 
-import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
@@ -15,15 +15,19 @@ import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
+import ru.maxol.MyAtlasAnim;
+import ru.maxol.MyInputProcessor;
+import ru.maxol.PhysX;
+import ru.maxol.Player;
 
-public class MyGame extends ApplicationAdapter {
+public class GameScreen implements Screen {
+    Game game;
     SpriteBatch batch;
     MyAtlasAnim animRun, animStay, animUp, animJump, tmpA;
     MyInputProcessor inputProcessor;
@@ -37,8 +41,8 @@ public class MyGame extends ApplicationAdapter {
     private OrthogonalTiledMapRenderer mapRenderer;
     private OrthographicCamera camera;
 
-    @Override
-    public void create() {
+    public GameScreen(Game game) {
+        this.game = game;
         initObjects();
         configSound();
         Gdx.app.log("Game", "Start");
@@ -50,33 +54,8 @@ public class MyGame extends ApplicationAdapter {
 
         initMap(def, fdef, shape);
         Gdx.graphics.setTitle("Sonic Loredan Edition");
-
-
     }
 
-    @Override
-    public void render() {
-        ScreenUtils.clear(Color.CLEAR);
-
-        camera.position.x = body.getPosition().x;
-        camera.position.y = body.getPosition().y;
-        camera.zoom = 0.5f;
-        camera.update();
-        mapRenderer.setView(camera);
-        mapRenderer.render();
-
-
-        batch.setProjectionMatrix(camera.combined);
-        batch.begin();
-//        batch.draw(background, 0, 0);
-        movePlayer();
-        camera.update();
-
-        batch.end();
-
-        physX.step();
-//        physX.debugDraw(camera);
-    }
 
     private void initMap(BodyDef def, FixtureDef fdef, PolygonShape shape) {
         def.type = BodyDef.BodyType.StaticBody;
@@ -191,8 +170,54 @@ public class MyGame extends ApplicationAdapter {
     }
 
     @Override
+    public void show() {
+
+    }
+
+    @Override
+    public void render(float delta) {
+        ScreenUtils.clear(Color.CLEAR);
+
+        camera.position.x = body.getPosition().x;
+        camera.position.y = body.getPosition().y;
+        camera.zoom = 0.5f;
+        camera.update();
+        mapRenderer.setView(camera);
+        mapRenderer.render();
+
+
+        batch.setProjectionMatrix(camera.combined);
+        batch.begin();
+//        batch.draw(background, 0, 0);
+        movePlayer();
+        camera.update();
+
+        batch.end();
+
+        physX.step();
+//        physX.debugDraw(camera);
+    }
+
+    @Override
     public void resize(int width, int height) {
         camera.viewportHeight = height;
         camera.viewportWidth = width;
     }
+
+    @Override
+    public void pause() {
+
+    }
+
+    @Override
+    public void resume() {
+
+    }
+
+    @Override
+    public void hide() {
+
+    }
+
+
 }
