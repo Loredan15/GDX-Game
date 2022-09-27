@@ -10,7 +10,8 @@ public class DesktopLauncher {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setForegroundFPS(60);
 		config.setTitle("Sonic Loredan Edition");
+		config.setWindowedMode(800,600);
 //		config.setWindowSizeLimits(637, 358, 637, 358);
-		new Lwjgl3Application(new MyGame(), config);
+		new Lwjgl3Application(new StartGame(), config);
 	}
 }
