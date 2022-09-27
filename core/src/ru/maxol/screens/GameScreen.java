@@ -21,10 +21,11 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
-import ru.maxol.MyAtlasAnim;
-import ru.maxol.MyInputProcessor;
-import ru.maxol.PhysX;
-import ru.maxol.Player;
+import ru.maxol.utils.MyAtlasAnim;
+import ru.maxol.utils.MyInputProcessor;
+import ru.maxol.utils.MyInputProcessorV2;
+import ru.maxol.utils.PhysX;
+import ru.maxol.unit.Player;
 
 public class GameScreen implements Screen {
     Game game;
@@ -70,11 +71,7 @@ public class GameScreen implements Screen {
             float y = rect.get(i).getRectangle().y + rect.get(i).getRectangle().height / 2;
             float w = rect.get(i).getRectangle().width / 2;
             float h = rect.get(i).getRectangle().height / 2;
-            //TODO А как скрыть фигуры ? Попробовал все эти варианты - все-равно видны :(
-//            rect.get(i).setOpacity(0f);
-//            rect.get(i).setVisible(false);
-//            env.setVisible(false);
-//            env.setOpacity(0);
+
             def.position.set(x, y);
             shape.setAsBox(w, h);
 
@@ -113,7 +110,8 @@ public class GameScreen implements Screen {
         animUp = new MyAtlasAnim("atlas/sonic.atlas", "sonic-up", 7);
         animJump = new MyAtlasAnim("atlas/sonic-jump.atlas", "sonic-jump", 7);
         player = new Player();
-        inputProcessor = new MyInputProcessor(player);
+//        inputProcessor = new MyInputProcessor(player);
+        inputProcessor = new MyInputProcessorV2();
         Gdx.input.setInputProcessor(inputProcessor);
 
         physX = new PhysX();

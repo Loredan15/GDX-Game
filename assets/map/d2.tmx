@@ -33,13 +33,37 @@
 </data>
  </layer>
  <objectgroup id="2" name="Hero">
-  <object id="1" name="Hero" x="279.5" y="350.5" width="70" height="70"/>
+  <object id="1" name="Hero" x="279.5" y="350.5" width="70" height="70">
+   <properties>
+    <property name="BodyType" value="Dynamic"/>
+   </properties>
+  </object>
  </objectgroup>
- <objectgroup id="3" name="env" opacity="1">
-  <object id="4" x="212" y="420" width="904" height="62"/>
-  <object id="5" x="1120" y="280" width="276" height="68"/>
-  <object id="6" x="1402" y="140" width="210" height="36"/>
-  <object id="7" x="1612" y="214" width="276.667" height="56"/>
-  <object id="18" x="1958.67" y="419.333" width="350.667" height="69.3333"/>
+ <objectgroup id="3" name="env">
+  <object id="4" x="212" y="420" width="904" height="62">
+   <properties>
+    <property name="BodyType" value="Static"/>
+   </properties>
+  </object>
+  <object id="5" x="1120" y="280" width="276" height="68">
+   <properties>
+    <property name="BodyType" value="Static"/>
+   </properties>
+  </object>
+  <object id="6" x="1402" y="140" width="210" height="36">
+   <properties>
+    <property name="BodyType" value="Static"/>
+   </properties>
+  </object>
+  <object id="7" x="1612" y="214" width="276.667" height="56">
+   <properties>
+    <property name="BodyType" value="Static"/>
+   </properties>
+  </object>
+  <object id="18" x="1958.67" y="419.333" width="350.667" height="69.3333">
+   <properties>
+    <property name="BodyType" value="Static"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
