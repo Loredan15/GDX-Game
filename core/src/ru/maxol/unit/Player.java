@@ -1,4 +1,4 @@
-package ru.maxol;
+package ru.maxol.unit;
 
 import com.badlogic.gdx.physics.box2d.Body;
 

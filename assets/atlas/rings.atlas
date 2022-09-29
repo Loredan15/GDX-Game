@@ -1,0 +1,69 @@
+
+rings.png
+size: 814, 102
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+ring
+  rotate: false
+  xy: 2, 4
+  size: 88, 89
+  orig: 98, 100
+  offset: 6, 6
+  index: 1
+ring
+  rotate: false
+  xy: 92, 4
+  size: 85, 90
+  orig: 102, 98
+  offset: 7, 3
+  index: 2
+ring
+  rotate: false
+  xy: 182, 4
+  size: 78, 92
+  orig: 93, 100
+  offset: 7, 4
+  index: 3
+ring
+  rotate: false
+  xy: 272, 4
+  size: 65, 94
+  orig: 78, 100
+  offset: 6, 3
+  index: 4
+ring
+  rotate: false
+  xy: 362, 4
+  size: 46, 96
+  orig: 68, 100
+  offset: 10, 2
+  index: 5
+ring
+  rotate: false
+  xy: 452, 4
+  size: 48, 95
+  orig: 68, 100
+  offset: 10, 3
+  index: 6
+ring
+  rotate: false
+  xy: 542, 4
+  size: 67, 94
+  orig: 85, 100
+  offset: 8, 3
+  index: 7
+ring
+  rotate: false
+  xy: 632, 4
+  size: 79, 91
+  orig: 90, 100
+  offset: 6, 5
+  index: 8
+ring
+  rotate: false
+  xy: 722, 4
+  size: 86, 90
+  orig: 93, 100
+  offset: 4, 5
+  index: 9

@@ -1,7 +1,8 @@
-package ru.maxol;
+package ru.maxol.utils;
 
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import ru.maxol.unit.Player;
 
 public class MyInputProcessor implements InputProcessor {
 
