@@ -1,6 +1,5 @@
 package ru.maxol.unit;
 
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -26,7 +25,7 @@ public class PlayerV2 {
 
     public enum Dir {LEFT, RIGHT}
 
-    private static final float scale = 2.8f;
+    private static final float scale = 1f;
     private float hitPoints, live;
 
     public PlayerV2(Body body) {
@@ -34,10 +33,10 @@ public class PlayerV2 {
         atlas = new TextureAtlas("atlas/sonic.atlas");
         jumpAtlas = new TextureAtlas("atlas/sonic-jump.atlas");
 
-        assets.put(Actions.STAND, new Animation<>(FPS, atlas.findRegion("sonic-stay")));
-        assets.put(Actions.RUN, new Animation<>(FPS, atlas.findRegion("sonic-run")));
-        assets.put(Actions.UP, new Animation<>(FPS, atlas.findRegion("sonic-up")));
-        assets.put(Actions.JUMP, new Animation<>(FPS, jumpAtlas.findRegion("sonic-jump")));
+        assets.put(Actions.STAND, new Animation<>(FPS, atlas.findRegions("sonic-stay")));
+        assets.put(Actions.RUN, new Animation<>(FPS, atlas.findRegions("sonic-run")));
+        assets.put(Actions.UP, new Animation<>(FPS, atlas.findRegions("sonic-up")));
+        assets.put(Actions.JUMP, new Animation<>(FPS, jumpAtlas.findRegions("sonic-jump")));
         baseAnimation = assets.get(Actions.STAND);
         loop = true;
         direction = Dir.LEFT;
@@ -91,7 +90,7 @@ public class PlayerV2 {
         return frame;
     }
 
-    public Rectangle getRectangle(OrthographicCamera camera, TextureRegion region) {
+    public Rectangle getRectangle() {
         TextureRegion frame = baseAnimation.getKeyFrame(time);
         float x = body.getPosition().x * PPM - frame.getRegionWidth() / 2 / scale;
         float y = body.getPosition().y * PPM - frame.getRegionHeight() / 2 / scale;
@@ -100,7 +99,12 @@ public class PlayerV2 {
         return new Rectangle(x, y, w, h);
     }
 
-    public void dispose(){
+    public float setTime(float deltaTime) {
+        time += deltaTime;
+        return time;
+    }
+
+    public void dispose() {
         atlas.dispose();
         assets.clear();
         jumpAtlas.dispose();

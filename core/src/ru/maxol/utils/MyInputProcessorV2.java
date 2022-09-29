@@ -18,10 +18,10 @@ public class MyInputProcessorV2 implements InputProcessor {
     @Override
     public boolean keyDown(int keycode) {
         switch (keycode) {
-            case Input.Keys.A -> out.add(-0.0075f, 0);
-            case Input.Keys.D -> out.add(0.0075f, 0);
-            case Input.Keys.W -> out.add(0, -0.0075f);
-            case Input.Keys.SPACE -> out.add(0, 0.0075f);
+            case Input.Keys.A -> out.add(-0.25f, 0);
+            case Input.Keys.D -> out.add(0.25f, 0);
+            case Input.Keys.W -> out.add(0, -0.5f);
+            case Input.Keys.SPACE -> out.add(0, 3f);
         }
 
         return true;
@@ -29,7 +29,7 @@ public class MyInputProcessorV2 implements InputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
-        switch (keycode){
+        switch (keycode) {
             case Input.Keys.A -> out.set(0, out.y);
             case Input.Keys.D -> out.set(0, out.y);
             case Input.Keys.W -> out.set(out.x, 0);
